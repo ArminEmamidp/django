@@ -22,6 +22,8 @@ from django.conf import global_settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+	
+    path('froala_editor/', include('froala_editor.urls')),
 
     path('', include('app.urls', namespace='app'))
 ]

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+<div class="bg-white text-primary text-center p-2 rounded">
+    {{ post.content|safe }}
+</div>
+
+{% endblock %}

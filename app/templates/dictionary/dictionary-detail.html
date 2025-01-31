@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ dictionary.language }} Dictionary {% endblock %}
+
+{% block content %}
+
+<div class="bg-white text-primary text-center p-2 rounded">
+    {{ dictionary.content|safe }}
+</div>
+
+{% endblock %}

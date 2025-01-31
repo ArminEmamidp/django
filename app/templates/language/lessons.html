@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ language.name }} Lessons {% endblock %}
+
+{% block content %}
+
+{% if lessons %}
+{% for lesson in lessons %}
+<br>
+<div class="bg-white text-primary text-center p-2 rounded">
+    <h2>{{ lesson.title }}</h2>
+    <a href="{{ lesson.lesson_detail }}" class="btn btn-primary w-100">Show more...</a>
+</div>
+<br>
+{% endfor %}
+{% else %}
+<h2 align="center">Do Not Exist Any Lessons</h2>
+{% endif %}
+
+{% endblock %}

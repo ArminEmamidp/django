@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Dictionary {% endblock %}
+
+{% block content %}
+
+{% if dictionaries %}
+{% for dictionary in dictionaries %}
+<br>
+<div class="bg-white text-primary text-center p-2 rounded">
+    <h2>{{ dictionary.language }}</h2>
+    <a href="{{ dictionary.dictionary_detail }}" class="btn btn-primary w-100">Start Learning</a>
+</div>
+<br>
+{% endfor %}
+{% else %}
+<h2 align="center">Do Not Exist Any Dictionaries</h2>
+{% endif %}
+
+{% endblock %}

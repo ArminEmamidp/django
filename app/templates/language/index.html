@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Languages {% endblock %}
+
+{% block content %}
+
+{% if languages %}
+{% for language in languages %}
+<br>
+<div class="bg-white text-primary text-center p-2 rounded">
+    <h2>{{ language.name }}</h2>
+    <p>{{ language.description }}</p>
+    <a href="{{ language.language_lessons }}" class="btn btn-primary w-100">Start Learning</a>
+</div>
+<br>
+{% endfor %}
+{% else %}
+<h2 align="center">Do Not Exist Any Languages</h2>
+{% endif %}
+
+{% endblock %}

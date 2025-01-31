@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ lesson.title }} {% endblock %}
+
+{% block content %}
+
+<div class="bg-white text-primary p-2 rounded">
+    {{ lesson.content|safe }}
+</div>
+
+<br><br>
+
+<form action="" method="post" class="bg-white text-primary p-2 rounded">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Send" class="btn btn-primary w-100">
+</form>
+
+<br>
+
+{% if comments %}
+{% for comment in comments %}
+<br>
+<div class="bg-white text-primary text-center p-2 rounded">
+    <h5 class="text-danger">{{ comment.user_email }} <br> {{ comment.user_name }}</h5>
+    <hr>
+    <p>{{ comment.text }}</p>
+</div>
+<br>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
