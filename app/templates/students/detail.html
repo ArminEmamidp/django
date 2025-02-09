@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Student Information {% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <h3>{{ student.first_name }}</h3>
+    <h3>{{ student.last_name }}</h3>
+    <h3>{{ student.code }}</h3>
+    <hr>
+    <a href="{% url 'app:student_update' student.id %}" class="btn btn-primary w-25">Update</a>
+    <a href="{% url 'app:student_delete' student.id %}" class="btn btn-danger w-25">Delete</a>
+</div>
+
+{% endblock %}

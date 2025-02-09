@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Students {% endblock %}
+
+{% block content %}
+
+{% if students %}
+{% for student in students %}
+<br>
+<div class="bg-white text-dark text-center p-1 rounded">
+    <h3>{{ student.first_name }}</h3>
+    <a href="{% url 'app:student_detail' student.id %}" class="btn btn-primary w-100">Show more</a>
+</div>
+<br>
+{% endfor %}
+{% else %}
+<h1 class="text-center">There are not any Students</h1>
+{% endif %}
+
+{% endblock %}
+
